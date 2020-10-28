@@ -6,6 +6,13 @@ public class Board {
 	
 	private int m_board[][] = new int[8][8];
 	
+	
+	
+	
+	
+	
+	
+	
 	public void generateboard() {
 		//generates an empty board in order to start the match
 		
@@ -26,6 +33,15 @@ public class Board {
 		
 	}
 
+	public int printboard() {
+		
+		return 0;
+
+	}
+	
+	
+	
+	
 	public Board() {
 		generateboard();
 	}
