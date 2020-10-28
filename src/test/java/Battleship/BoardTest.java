@@ -47,6 +47,19 @@ public class BoardTest {
 		
 		Board b = new Board();
 		
+		b.printboard();
+		
+		for (int row = 0; row < 8; row++) {
+			
+			for (int col = 0; col < 8; col++) {
+				
+				assertEquals(0, b.getM_board()[row][col]);
+				
+			}
+			
+		}
+		
+		/*
 		String example[] = {"A","B","C","D","E","F","G","H",
 					  "1","0","0","0","0","0","0","0","0",
 					  "1","0","0","0","0","0","0","0","0",
@@ -59,7 +72,7 @@ public class BoardTest {
 		};
 		
 		assertEquals(example, b.printboard());
-
+		*/
 		
 	}
 

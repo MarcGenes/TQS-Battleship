@@ -33,10 +33,26 @@ public class Board {
 		
 	}
 
-	public int printboard() {
+	public void printboard() {
 		
-		return 0;
-
+		System.out.println("  A B C D E F G H");
+		
+		int row_number = 1;
+		
+		for (int row = 0; row < 8; row++) {
+			
+			System.out.print(row_number);
+			System.out.print(" ");
+			
+			for (int col = 0; col < 8; col++) {
+				
+				System.out.print(m_board[row][col]);
+				System.out.print(" ");
+				
+			}
+			System.out.println();
+			row_number++;
+		}
 	}
 	
 	
