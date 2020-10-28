@@ -11,8 +11,19 @@ public class BoardTest {
 		
 		Board b = new Board();
 		
-		b.generateboard();
 		
+		for (int row = 0; row < 8; row++) {
+			
+			for (int col = 0; col < 8; col++) {
+				
+				assertEquals(0, b.getM_board()[row][col]);
+				//System.out.println(b.getM_board()[row][col]);
+				
+			}
+			
+		}
+		
+		/*
 		String exampleboard[] = {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
 								   " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
 								   " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
@@ -24,7 +35,9 @@ public class BoardTest {
 								   " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",
 								   " ", " ", " ", " ", " ", " ", " ", " ", " ", " ",};
 		
-		assertEquals(b.generateboard(), exampleboard);
+		assertEquals(exampleboard, b.generateboard());
+		*/
+		
 		
 		
 	}
