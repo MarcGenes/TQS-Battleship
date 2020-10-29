@@ -125,7 +125,7 @@ public class Player {
 		
 		String col_pos;
 		int row_pos;
-		int number_of_ships = 3;
+		int number_of_ships = 4;
 		
 		
 		do {
