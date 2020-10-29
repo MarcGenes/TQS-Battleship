@@ -51,4 +51,15 @@ public class Player {
 		return selectable;
 	}
 
+	public boolean insertship() {
+		//This functions try to insert a ship in the board of the player
+		//The position to insert the ship is selected with the keyboard by the user
+		
+		
+		
+		
+		return false;
+		
+	}
+	
 }

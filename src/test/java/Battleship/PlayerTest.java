@@ -23,5 +23,21 @@ public class PlayerTest {
 		
 		
 	}
+	
+	@Test
+	public void testInsertship() {
+		
+		Board b = new Board();
+		
+		Player p = new Player();
+		
+		boolean result = p.insertship();
+		
+		assertTrue(result);
+		
+		
+		
+		
+	}
 
 }
