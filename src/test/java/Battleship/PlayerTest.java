@@ -15,11 +15,11 @@ public class PlayerTest {
 		
 		int row = 1;
 		
-		int col = 2;
+		String col = "C";
 		
+		boolean result = p.marcableposition(b, col, row);
 		
-		
-		assertTrue(p.marcableposition(b, row, col));
+		assertTrue(result);
 		
 		
 	}
