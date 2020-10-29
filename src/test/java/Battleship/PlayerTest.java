@@ -27,17 +27,14 @@ public class PlayerTest {
 	@Test
 	public void testInsertship() {
 		
-		Board b = new Board();
-		
 		Player p = new Player();
 		
-		boolean result = p.insertship();
+		p.insertship();
 		
-		assertTrue(result);
-		
-		
+		p.getM_playerboard().printboard();
 		
 		
 	}
+	
 
 }

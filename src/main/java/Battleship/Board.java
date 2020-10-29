@@ -37,7 +37,7 @@ public class Board {
 		
 		System.out.println("  A B C D E F G H");
 		
-		int row_number = 1;
+		int row_number = 0;
 		
 		for (int row = 0; row < 8; row++) {
 			
