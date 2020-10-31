@@ -10,11 +10,12 @@ public class Player {
 	}
 
 
-
+	
 
 	public void setM_playerboard(Board m_playerboard) {
 		this.m_playerboard = m_playerboard;
 	}
+
 
 
 

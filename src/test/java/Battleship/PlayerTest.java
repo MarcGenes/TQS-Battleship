@@ -36,7 +36,7 @@ public class PlayerTest {
 		/*A-0, A-7, H-0, H-7*/
 		
 		/*The order to interact with the matrix is the following getM_board()[0-7][A-B]*/
-		
+		/*
 		for (int row = 0; row < 8; row++) {
 
 			for (int col = 0; col < 8; col++) {
@@ -62,7 +62,7 @@ public class PlayerTest {
 				
 				
 			}
-		
+		*/
 		/*
 		assertEquals(1, p.getM_playerboard().getM_board()[0][0]);
 		assertEquals(1, p.getM_playerboard().getM_board()[7][0]);
@@ -73,7 +73,7 @@ public class PlayerTest {
 		
 		//Testing interior limit (limit testing)
 		/*B-1, B-2, B-3, B-4*/
-		/*
+		
 		for (int row = 0; row < 8; row++) {
 
 			for (int col = 0; col < 8; col++) {
@@ -95,7 +95,7 @@ public class PlayerTest {
 				
 				
 			}
-		*/
+		
 		/*
 		assertEquals(1, p.getM_playerboard().getM_board()[1][1]);
 		assertEquals(1, p.getM_playerboard().getM_board()[2][1]);
