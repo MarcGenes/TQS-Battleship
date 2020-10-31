@@ -163,6 +163,17 @@ public class Player {
 		
 		
 	}
+	
+	
+
+	public boolean CPUinsertship() {
+
+		return false;
+		
+	}
+	
+	
+	
 
 	public Player() {
 		

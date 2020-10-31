@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class PlayerTest {
 
-	@Test
+	//@Test
 	public void testMarcableposition() {
 		
 		Board b = new Board();
@@ -24,7 +24,7 @@ public class PlayerTest {
 		
 	}
 	
-	@Test
+	//@Test
 	public void testInsertship() {
 		
 		Player p = new Player();
@@ -73,7 +73,7 @@ public class PlayerTest {
 		
 		//Testing interior limit (limit testing)
 		/*B-1, B-2, B-3, B-4*/
-		
+		/*
 		for (int row = 0; row < 8; row++) {
 
 			for (int col = 0; col < 8; col++) {
@@ -95,6 +95,7 @@ public class PlayerTest {
 				
 				
 			}
+		*/
 		
 		/*
 		assertEquals(1, p.getM_playerboard().getM_board()[1][1]);
@@ -103,10 +104,23 @@ public class PlayerTest {
 		assertEquals(1, p.getM_playerboard().getM_board()[4][1]);
 		*/
 		
-		p.getM_playerboard().printboard();
+		//p.getM_playerboard().printboard();
 		
 		
 	}
 	
+	
+	@Test
+	public void CPUinsertship() {
+		
+		
+		Player p = new Player();
+		
+		boolean result = p.CPUinsertship();
+		
+		assertTrue(result);
+
+		
+	}
 
 }
