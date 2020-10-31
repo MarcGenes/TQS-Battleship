@@ -166,9 +166,75 @@ public class Player {
 	
 	
 
-	public boolean CPUinsertship() {
+	public void CPUinsertship(int[][] shipsposition) {
+		//This functions try to insert a ship in the board of the player
+		
+		
+		String col_pos = null;
+		int row_pos;
+		int number_of_ships = 4;
+		
+		
+		do {
+			
+		System.out.println("There are " + number_of_ships + " ships left to allocate");
 
-		return false;
+		
+	        switch (shipsposition[number_of_ships - 1][1]) {
+			case 0:
+				col_pos = "A";
+				break;
+			case 1:
+				col_pos = "B";
+				break;
+			case 2:
+				col_pos = "C";
+				break;
+			case 3:
+				col_pos = "D";
+				break;
+			case 4:
+				col_pos = "E";
+				break;
+			case 5:
+				col_pos = "F";
+				break;
+			case 6:
+				col_pos = "G";
+				break;
+			case 7:
+				col_pos = "H";
+				break;
+				
+			default:
+				System.out.println(" Incorrect value for function CPUinsertship switch_case has failed ");
+				break;
+			}
+        
+
+        System.out.println("Text entered = " + col_pos);
+        
+        // Getting int input
+        System.out.print("Enter a row number between 0 - 7: ");
+        row_pos = shipsposition[number_of_ships - 1][0];
+        System.out.println("You entered " + row_pos);
+        
+        
+
+        
+	        if (marcableposition(m_playerboard, col_pos, row_pos)) {
+				number_of_ships--;
+				int converted_col = string_to_int(col_pos);
+		        m_playerboard.getM_board()[row_pos][converted_col] = 1;
+				
+			}
+	        
+	        
+        
+        
+		} while (number_of_ships != 0);
+        
+        
 		
 	}
 	

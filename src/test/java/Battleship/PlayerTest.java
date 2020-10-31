@@ -115,11 +115,36 @@ public class PlayerTest {
 		
 		
 		Player p = new Player();
+		/*MockObject allocates on A-0, C-2, H-0, H-7 */
+		MockInterfaceRandom MockObject = new MockInterfaceRandom();
 		
-		boolean result = p.CPUinsertship();
+		p.CPUinsertship(MockObject.randomallocation());
 		
-		assertTrue(result);
+		p.getM_playerboard().printboard();
+		
+		for (int row = 0; row < 8; row++) {
 
+			for (int col = 0; col < 8; col++) {
+				
+				if (row == 0 && col == 0) {
+					assertEquals(1, p.getM_playerboard().getM_board()[row][col]);
+				}else if (row == 2 && col == 2) {
+					assertEquals(1, p.getM_playerboard().getM_board()[row][col]);
+				}else if (row == 0 && col == 7) {
+					assertEquals(1, p.getM_playerboard().getM_board()[row][col]);
+				}else if (row == 7 && col == 7) {
+					assertEquals(1, p.getM_playerboard().getM_board()[row][col]);
+				}else {
+					assertEquals(0, p.getM_playerboard().getM_board()[row][col]);
+				}
+						
+					
+				}
+				
+				
+			}
+		
+		
 		
 	}
 
