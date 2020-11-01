@@ -17,6 +17,10 @@ public class Player {
 	}
 
 
+	public int shoot(Board target_board) {
+		
+		return 0;
+	}
 
 
 

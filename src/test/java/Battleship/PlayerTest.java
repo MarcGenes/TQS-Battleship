@@ -149,7 +149,7 @@ public class PlayerTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void CPUinsertship1() {
 		
 		
@@ -198,6 +198,17 @@ public class PlayerTest {
 		p.getM_playerboard().printboard();
 		
 		//Test has to be under here
+	}
+	
+	@Test
+	public void shoot() {
+		
+		Player you = new Player();
+		
+		Player bot = new Player();
+		
+		assertEquals(1, you.shoot(bot.getM_playerboard()));
+		
 	}
 
 }
