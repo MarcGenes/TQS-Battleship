@@ -19,9 +19,104 @@ public class Player {
 
 	public int shoot(Board target_board) {
 		
-		return 0;
+		Scanner input = new Scanner(System.in);
+		
+		String col_pos;
+		int row_pos;
+		
+		int result = -1;
+		
+		
+		do {
+		
+		System.out.println("Now you will have to try shoot a ship of the adversary board");
+			
+			
+		// Getting String input
+        System.out.print("Enter a word between A - H in capital letters: ");
+        col_pos = input.next();
+        System.out.println("Text entered = " + col_pos);
+        
+        // Getting int input
+        System.out.print("Enter a row number between 0 - 7: ");
+        row_pos = input.nextInt();
+        System.out.println("You entered " + row_pos);
+        
+	        if (targetableposition(target_board, col_pos, row_pos)) {
+				int converted_col = string_to_int(col_pos);
+				result = target_board.getM_board()[row_pos][converted_col];
+				
+			}
+	        
+	        
+        
+        
+		} while (!targetableposition(target_board, col_pos, row_pos));
+        
+        
+		
+		
+		return result;
 	}
 
+	
+	public boolean targetableposition(Board board, String position_col, int position_row) {
+		//returns true if the selected position is valid (inside the board)
+		//returns false if the selected position invalid (outside the board)
+		
+		int col_to_numeric = -1;
+		
+		boolean selectable = false;
+		boolean correct_col = true;
+		boolean correct_row = false;
+		
+		switch (position_col) {
+		case "A":
+			col_to_numeric = 0;
+			break;
+		case "B":
+			col_to_numeric = 1;
+			break;
+		case "C":
+			col_to_numeric = 2;
+			break;
+		case "D":
+			col_to_numeric = 3;
+			break;
+		case "E":
+			col_to_numeric = 4;
+			break;
+		case "F":
+			col_to_numeric = 5;
+			break;
+		case "G":
+			col_to_numeric = 6;
+			break;
+		case "H":
+			col_to_numeric = 7;
+			break;
+			
+		default:
+			System.out.println(" Incorrect value for function targetableposition switch_case has failed ");
+			correct_col = false;
+			break;
+		}
+		
+		if (position_row > -1 && position_row < 8) {
+			correct_row = true;
+		}
+		
+		if (correct_col && correct_row) {
+			selectable = true;
+		}
+		
+		
+		return selectable;
+	}
+
+	
+	
+	
 
 
 	public boolean marcableposition(Board board, String position_col, int position_row) {
