@@ -110,7 +110,7 @@ public class PlayerTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void CPUinsertship() {
 		
 		
@@ -146,6 +146,58 @@ public class PlayerTest {
 		
 		
 		
+	}
+	
+	
+	@Test
+	public void CPUinsertship1() {
+		
+		
+		Player p = new Player();
+		
+		RealRandom random = new RealRandom();
+		
+		int[][]rand = random.randomallocation();
+		
+		int row0 = rand[0][0];
+		int col0 = rand[0][1];
+		
+		int row1 = rand[1][0];
+		int col1 = rand[1][1];
+		
+		int row2 = rand[2][0];
+		int col2 = rand[2][1];
+		
+		int row3 = rand[3][0];
+		int col3 = rand[3][1];
+
+		p.CPUinsertship(rand);
+		
+		for (int row = 0; row < 8; row++) {
+
+			for (int col = 0; col < 8; col++) {
+				
+				if (row == row0 && col == col0) {
+					assertEquals(1, p.getM_playerboard().getM_board()[row][col]);
+				}else if (row == row1 && col == col1) {
+					assertEquals(1, p.getM_playerboard().getM_board()[row][col]);
+				}else if (row == row2 && col == col2) {
+					assertEquals(1, p.getM_playerboard().getM_board()[row][col]);
+				}else if (row == row3 && col == col3) {
+					assertEquals(1, p.getM_playerboard().getM_board()[row][col]);
+				}else {
+					assertEquals(0, p.getM_playerboard().getM_board()[row][col]);
+				}
+						
+					
+				}
+				
+				
+			}
+		
+		p.getM_playerboard().printboard();
+		
+		//Test has to be under here
 	}
 
 }
