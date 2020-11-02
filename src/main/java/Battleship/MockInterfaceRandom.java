@@ -8,4 +8,10 @@ public class MockInterfaceRandom implements InterfaceRandom{
 		return randomization;
 	}
 
+	@Override
+	public int[][] randomshot() {
+		int[][] randomization = {{7,7}};
+		return randomization;
+	}
+
 }

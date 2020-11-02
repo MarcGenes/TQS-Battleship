@@ -45,4 +45,10 @@ public class RealRandom implements InterfaceRandom {
 		return randomization;
 	}
 
+	@Override
+	public int[][] randomshot() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -200,7 +200,7 @@ public class PlayerTest {
 		//Test has to be under here
 	}
 	
-	@Test
+	//@Test
 	public void shoot() {
 		
 		Player you = new Player();
@@ -215,5 +215,21 @@ public class PlayerTest {
 		assertEquals(1,result);
 		
 	}
+	
+	@Test
+		public void CPUshoot() {
+			
+			Player you = new Player();
+			
+			Player bot = new Player();
+			
+			MockInterfaceRandom mockobject = new MockInterfaceRandom();
+			/*MockObject allocates on A-0, C-2, H-0, H-7 */
+			you.CPUinsertship(mockobject.randomallocation());
+			int result = bot.CPUshoot(you.getM_playerboard(), mockobject.randomshot());
+			bot.getM_playerboard().printadversaryboard();
+			assertEquals(1,result);
+			
+		}
 
 }

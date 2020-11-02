@@ -49,6 +49,85 @@ public class Player {
 				result = target_board.getM_board()[row_pos][converted_col];
 				String converted_result = Integer.toString(result);
 				this.getM_playerboard().getM_adversaryboard()[row_pos][converted_col] = converted_result;
+				if (result == 1) {
+					this.getM_playerboard().setM_strikes(this.getM_playerboard().getM_strikes() + 1);
+				}
+			}
+	        
+	        
+        
+        
+		} while (!targetableposition(target_board, col_pos, row_pos));
+        
+        
+		
+		
+		return result;
+	}
+	
+	
+	public int CPUshoot(Board target_board, int[][]shot_position) {
+		
+		Scanner input = new Scanner(System.in);
+		
+		String col_pos = null;
+		int row_pos = shot_position[0][0];
+		
+        switch (shot_position[0][1]) {
+		case 0:
+			col_pos = "A";
+			break;
+		case 1:
+			col_pos = "B";
+			break;
+		case 2:
+			col_pos = "C";
+			break;
+		case 3:
+			col_pos = "D";
+			break;
+		case 4:
+			col_pos = "E";
+			break;
+		case 5:
+			col_pos = "F";
+			break;
+		case 6:
+			col_pos = "G";
+			break;
+		case 7:
+			col_pos = "H";
+			break;
+			
+		default:
+			System.out.println(" Incorrect value for function CPUinsertship switch_case has failed ");
+			break;
+		}
+		
+		int result = -1;
+		
+
+		
+		do {
+				
+		
+
+			
+        System.out.println("Text entered = " + col_pos);
+        
+
+        System.out.println("You entered " + row_pos);
+        
+	        if (targetableposition(target_board, col_pos, row_pos)) {
+				int converted_col = string_to_int(col_pos);
+				result = target_board.getM_board()[row_pos][converted_col];
+				
+				String converted_result = Integer.toString(result);
+				this.getM_playerboard().getM_adversaryboard()[row_pos][converted_col] = converted_result;
+				
+				if (result == 1) {
+					this.getM_playerboard().setM_strikes(this.getM_playerboard().getM_strikes() + 1);
+				}
 				
 			}
 	        
