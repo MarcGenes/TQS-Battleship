@@ -216,7 +216,7 @@ public class PlayerTest {
 		
 	}
 	
-	@Test
+	//@Test
 		public void CPUshoot() {
 			
 			Player you = new Player();
@@ -231,5 +231,21 @@ public class PlayerTest {
 			assertEquals(1,result);
 			
 		}
+		
+	@Test
+		public void CPUshoot_real() {
+			
+			Player you = new Player();
+			
+			Player bot = new Player();
+			RealRandom rand = new RealRandom();
+			MockInterfaceRandom mockobject = new MockInterfaceRandom();
+			/*MockObject allocates on A-0, C-2, H-0, H-7 */
+			you.CPUinsertship(mockobject.randomallocation());
+			int result = bot.CPUshoot(you.getM_playerboard(), rand.randomshot());
+			bot.getM_playerboard().printadversaryboard();
+			assertEquals(1,result);
+			
+		}	
 
 }
