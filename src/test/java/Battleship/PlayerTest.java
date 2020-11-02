@@ -244,7 +244,7 @@ public class PlayerTest {
 			you.CPUinsertship(mockobject.randomallocation());
 			int result = bot.CPUshoot(you.getM_playerboard(), rand.randomshot());
 			bot.getM_playerboard().printadversaryboard();
-			assertEquals(1,result);
+			assertEquals(0,result);
 			
 		}	
 

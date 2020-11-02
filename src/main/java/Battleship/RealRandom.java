@@ -48,7 +48,13 @@ public class RealRandom implements InterfaceRandom {
 	@Override
 	public int[][] randomshot() {
 		// TODO Auto-generated method stub
-		int[][] result = {{1,1}};
+		
+		
+		Random random = new Random();
+		int randomrow = random.nextInt(8);
+		int randomcol = random.nextInt(8);
+		int[][] result = {{randomrow, randomcol}};
+		
 		return result;
 	}
 
