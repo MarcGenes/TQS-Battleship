@@ -5,6 +5,8 @@ public class Player {
 	
 	private Board m_playerboard;
 	
+	
+	
 	public Board getM_playerboard() {
 		return m_playerboard;
 	}
@@ -45,6 +47,8 @@ public class Player {
 	        if (targetableposition(target_board, col_pos, row_pos)) {
 				int converted_col = string_to_int(col_pos);
 				result = target_board.getM_board()[row_pos][converted_col];
+				String converted_result = Integer.toString(result);
+				this.getM_playerboard().getM_adversaryboard()[row_pos][converted_col] = converted_result;
 				
 			}
 	        

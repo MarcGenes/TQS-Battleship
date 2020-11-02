@@ -211,6 +211,7 @@ public class PlayerTest {
 		/*MockObject allocates on A-0, C-2, H-0, H-7 */
 		bot.CPUinsertship(mockobject.randomallocation());
 		int result = you.shoot(bot.getM_playerboard());
+		you.getM_playerboard().printadversaryboard();
 		assertEquals(1,result);
 		
 	}
