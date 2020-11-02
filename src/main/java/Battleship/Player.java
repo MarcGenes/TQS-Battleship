@@ -358,9 +358,6 @@ public class Player {
 		
 		
 		do {
-			
-		System.out.println("There are " + number_of_ships + " ships left to allocate");
-
 		
 	        switch (shipsposition[number_of_ships - 1][1]) {
 			case 0:
@@ -394,12 +391,11 @@ public class Player {
 			}
         
 
-        System.out.println("Text entered = " + col_pos);
+        System.out.println("CPU entered = " + col_pos);
         
         // Getting int input
-        System.out.print("Enter a row number between 0 - 7: ");
         row_pos = shipsposition[number_of_ships - 1][0];
-        System.out.println("You entered " + row_pos);
+        System.out.println("CPU entered " + row_pos);
         
         
 
