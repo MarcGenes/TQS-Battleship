@@ -21,7 +21,9 @@ public class main {
 		
 		do {
 			
-			you.shoot(cpu.getM_playerboard());
+			int[][] direction = you.chooseshotdirection(cpu.getM_playerboard());
+			 
+			you.shoot(cpu.getM_playerboard(), direction);
 			
 			cpu.CPUshoot(you.getM_playerboard(), rand.randomshot());
 			

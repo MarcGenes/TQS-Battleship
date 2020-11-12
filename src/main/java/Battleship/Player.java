@@ -12,27 +12,14 @@ public class Player {
 	}
 
 
-	public int[][] chooseshotdirection() {
-		
-		
-		return null;
-		
-		
-	}
-
-
-	public int shoot(Board target_board) {
+	public int[][] chooseshotdirection(Board target_board ) {
 		
 		Scanner input = new Scanner(System.in);
-		
 		String col_pos;
 		int row_pos;
 		
-		int result = -1;
-		
-		
 		do {
-		
+			
 		System.out.println("Now you will have to try shoot a ship of the adversary board");
 			
 			
@@ -45,6 +32,61 @@ public class Player {
         System.out.print("Enter a row number between 0 - 7: ");
         row_pos = input.nextInt();
         System.out.println("You entered " + row_pos);
+	        
+        
+        
+		} while (!targetableposition(target_board, col_pos, row_pos));
+		
+		
+		
+		int[][] position = {{row_pos,string_to_int(col_pos)}};
+		
+		return position;
+		
+		
+		
+		
+	}
+
+
+	public int shoot(Board target_board, int[][] direction_to_shoot) {
+		
+		
+		String col_pos = null;
+		int row_pos = direction_to_shoot[0][0];
+		
+		int result = -1;
+		
+        switch (direction_to_shoot[0][1]) {
+		case 0:
+			col_pos = "A";
+			break;
+		case 1:
+			col_pos = "B";
+			break;
+		case 2:
+			col_pos = "C";
+			break;
+		case 3:
+			col_pos = "D";
+			break;
+		case 4:
+			col_pos = "E";
+			break;
+		case 5:
+			col_pos = "F";
+			break;
+		case 6:
+			col_pos = "G";
+			break;
+		case 7:
+			col_pos = "H";
+			break;
+			
+		default:
+			System.out.println(" Incorrect value for function CPUinsertship switch_case has failed ");
+			break;
+		}
         
         if (targetableposition(target_board, col_pos, row_pos)) {
         	
@@ -57,13 +99,7 @@ public class Player {
 				this.getM_playerboard().setM_strikes(this.getM_playerboard().getM_strikes() + 1);
 			}
 		}
-	        
-	        
-        
-        
-		} while (!targetableposition(target_board, col_pos, row_pos));
-        
-        
+	            
 		
 		
 		return result;

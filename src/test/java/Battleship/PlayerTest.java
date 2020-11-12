@@ -210,7 +210,8 @@ public class PlayerTest {
 		MockInterfaceRandom mockobject = new MockInterfaceRandom();
 		/*MockObject allocates on A-0, C-2, H-0, H-7 */
 		bot.CPUinsertship(mockobject.randomallocation());
-		int result = you.shoot(bot.getM_playerboard());
+		int [][] direction = you.chooseshotdirection(bot.getM_playerboard());
+		int result = you.shoot(bot.getM_playerboard(), direction);
 		you.getM_playerboard().printadversaryboard();
 		assertEquals(1,result);
 		
@@ -251,8 +252,9 @@ public class PlayerTest {
 	@Test
 		public void chooseshotdirection() {
 		Player you = new Player();
-		
-		assertNotNull(you.chooseshotdirection());
+		Player bot = new Player();
+		int [][] direction = you.chooseshotdirection(bot.getM_playerboard());
+		assertNotNull(direction);
 		
 		
 	}
