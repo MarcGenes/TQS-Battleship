@@ -12,10 +12,12 @@ public class Player {
 	}
 
 
-	
-
-	public void setM_playerboard(Board m_playerboard) {
-		this.m_playerboard = m_playerboard;
+	public int[][] chooseshotdirection() {
+		
+		
+		return null;
+		
+		
 	}
 
 
@@ -44,15 +46,17 @@ public class Player {
         row_pos = input.nextInt();
         System.out.println("You entered " + row_pos);
         
-	        if (targetableposition(target_board, col_pos, row_pos)) {
-				int converted_col = string_to_int(col_pos);
-				result = target_board.getM_board()[row_pos][converted_col];
-				String converted_result = Integer.toString(result);
-				this.getM_playerboard().getM_adversaryboard()[row_pos][converted_col] = converted_result;
-				if (result == 1) {
-					this.getM_playerboard().setM_strikes(this.getM_playerboard().getM_strikes() + 1);
-				}
+        if (targetableposition(target_board, col_pos, row_pos)) {
+        	
+			int converted_col = string_to_int(col_pos);
+			result = target_board.getM_board()[row_pos][converted_col];
+			String converted_result = Integer.toString(result);
+			this.getM_playerboard().getM_adversaryboard()[row_pos][converted_col] = converted_result;
+			
+			if (result == 1) {
+				this.getM_playerboard().setM_strikes(this.getM_playerboard().getM_strikes() + 1);
 			}
+		}
 	        
 	        
         
@@ -185,13 +189,13 @@ public class Player {
 			break;
 		}
 		
-		if (position_row > -1 && position_row < 8) {
-			correct_row = true;
-		}
 		
-		if (correct_col && correct_row) {
-			selectable = true;
-		}
+			correct_row = position_row > -1 && position_row < 8;
+		
+		
+		
+			selectable = correct_col && correct_row;
+		
 		
 		
 		return selectable;

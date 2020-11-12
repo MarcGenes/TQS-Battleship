@@ -43,12 +43,12 @@ public class main {
 			
 			///
 			
-			if (you.getM_playerboard().getM_strikes() == 4) {
-				finish = true;
-			}
-			if (cpu.getM_playerboard().getM_strikes() == 4) {
-				finish = true;
-			}
+			
+				finish = you.getM_playerboard().getM_strikes() == 4;
+			
+			
+				finish = cpu.getM_playerboard().getM_strikes() == 4;
+			
 			
 			
 		} while (finish == false);
@@ -56,7 +56,7 @@ public class main {
 		if (you.getM_playerboard().getM_strikes() == 4) {
 			System.out.println("You win like a champ");
 		}else {
-			System.out.println("You lost like a champ");
+			System.out.println("You lose like a champ");
 		}
 
 	}

@@ -232,7 +232,7 @@ public class PlayerTest {
 			
 		}
 		
-	@Test
+	//@Test
 		public void CPUshoot_real() {
 			
 			Player you = new Player();
@@ -247,5 +247,14 @@ public class PlayerTest {
 			assertEquals(0,result);
 			
 		}	
+	
+	@Test
+		public void chooseshotdirection() {
+		Player you = new Player();
+		
+		assertNotNull(you.chooseshotdirection());
+		
+		
+	}
 
 }

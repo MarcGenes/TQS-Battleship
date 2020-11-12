@@ -106,8 +106,6 @@ public class Board {
 		return m_board;
 	}
 
-	public void setM_board(int[][] m_board) {
-		this.m_board = m_board;
-	};
+
 
 }
