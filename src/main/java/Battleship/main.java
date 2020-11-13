@@ -45,13 +45,18 @@ public class main {
 			
 			///
 			
+			if (you.getM_playerboard().getM_strikes() == 4) {
+				finish = true;
+			}
+				
 			
-				finish = you.getM_playerboard().getM_strikes() == 4;
+			if (cpu.getM_playerboard().getM_strikes() == 4) {
+				finish = true;
+			}
+				
 			
 			
-				finish = cpu.getM_playerboard().getM_strikes() == 4;
-			
-			
+				
 			
 		} while (finish == false);
 		

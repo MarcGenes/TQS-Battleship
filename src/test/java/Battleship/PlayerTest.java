@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class PlayerTest {
 
-	//@Test
+	@Test
 	public void testMarcableposition() {
 		
 		Board b = new Board();
@@ -27,9 +27,9 @@ public class PlayerTest {
 	//@Test
 	public void testInsertship() {
 		
-		Player p = new Player();
+		//Player p = new Player();
 		
-		p.insertship();
+		//p.insertship();
 		
 		//Testing EVERY valid position in the board (limit testing & border testing)
 		/*This test passes ok when you put a ship in the edges of the board*/
@@ -110,7 +110,7 @@ public class PlayerTest {
 	}
 	
 	
-	//@Test
+	@Test
 	public void CPUinsertship() {
 		
 		
@@ -149,7 +149,7 @@ public class PlayerTest {
 	}
 	
 	
-	//@Test
+	@Test
 	public void CPUinsertship1() {
 		
 		
@@ -200,7 +200,7 @@ public class PlayerTest {
 		//Test has to be under here
 	}
 	
-	//@Test
+	@Test
 	public void shoot() {
 		
 		Player you = new Player();
@@ -210,14 +210,14 @@ public class PlayerTest {
 		MockInterfaceRandom mockobject = new MockInterfaceRandom();
 		/*MockObject allocates on A-0, C-2, H-0, H-7 */
 		bot.CPUinsertship(mockobject.randomallocation());
-		int [][] direction = you.chooseshotdirection(bot.getM_playerboard());
+		int [][] direction = mockobject.randomshot();
 		int result = you.shoot(bot.getM_playerboard(), direction);
 		you.getM_playerboard().printadversaryboard();
 		assertEquals(1,result);
 		
 	}
 	
-	//@Test
+	@Test
 		public void CPUshoot() {
 			
 			Player you = new Player();
@@ -233,7 +233,7 @@ public class PlayerTest {
 			
 		}
 		
-	//@Test
+	@Test
 		public void CPUshoot_real() {
 			
 			Player you = new Player();
@@ -243,9 +243,17 @@ public class PlayerTest {
 			MockInterfaceRandom mockobject = new MockInterfaceRandom();
 			/*MockObject allocates on A-0, C-2, H-0, H-7 */
 			you.CPUinsertship(mockobject.randomallocation());
-			int result = bot.CPUshoot(you.getM_playerboard(), rand.randomshot());
+			int[][] position = rand.randomshot();
+			int result = bot.CPUshoot(you.getM_playerboard(), position);
 			bot.getM_playerboard().printadversaryboard();
-			assertEquals(0,result);
+			
+			int row = position[0][0];
+			int col = position[0][1];
+			if (you.getM_playerboard().getM_board()[row][col] == 0) {
+				assertEquals(0,result);
+			}else {
+				assertEquals(1,result);
+			}
 			
 		}	
 	
@@ -253,7 +261,8 @@ public class PlayerTest {
 		public void chooseshotdirection() {
 		Player you = new Player();
 		Player bot = new Player();
-		int [][] direction = you.chooseshotdirection(bot.getM_playerboard());
+		MockInterfaceRandom mockobject = new MockInterfaceRandom();
+		int [][] direction = mockobject.randomshot();
 		assertNotNull(direction);
 		
 		

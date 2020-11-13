@@ -46,11 +46,11 @@ public class Board {
 	public String[][] getM_adversaryboard() {
 		return m_adversaryboard;
 	}
-
+/*
 	public void setM_adversaryboard(String[][] m_adversaryboard) {
 		this.m_adversaryboard = m_adversaryboard;
 	}
-
+*/
 	public void printboard() {
 		
 		System.out.println("  A B C D E F G H");

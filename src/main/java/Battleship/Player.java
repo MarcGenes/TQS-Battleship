@@ -48,45 +48,54 @@ public class Player {
 		
 	}
 
+	public String int_to_string(int col) {
+		
+		String col_pos = null;
+		
+	       switch (col) {
+			case 0:
+				col_pos = "A";
+				break;
+			case 1:
+				col_pos = "B";
+				break;
+			case 2:
+				col_pos = "C";
+				break;
+			case 3:
+				col_pos = "D";
+				break;
+			case 4:
+				col_pos = "E";
+				break;
+			case 5:
+				col_pos = "F";
+				break;
+			case 6:
+				col_pos = "G";
+				break;
+			case 7:
+				col_pos = "H";
+				break;
+				
+			default:
+				System.out.println(" Incorrect value for function CPUinsertship switch_case has failed ");
+				col_pos = "ERROR";
+				break;
+			}
+	       
+	       return col_pos;
+		
+	}
 
 	public int shoot(Board target_board, int[][] direction_to_shoot) {
 		
 		
-		String col_pos = null;
+		String col_pos = int_to_string(direction_to_shoot[0][1]);
 		int row_pos = direction_to_shoot[0][0];
 		
 		int result = -1;
 		
-        switch (direction_to_shoot[0][1]) {
-		case 0:
-			col_pos = "A";
-			break;
-		case 1:
-			col_pos = "B";
-			break;
-		case 2:
-			col_pos = "C";
-			break;
-		case 3:
-			col_pos = "D";
-			break;
-		case 4:
-			col_pos = "E";
-			break;
-		case 5:
-			col_pos = "F";
-			break;
-		case 6:
-			col_pos = "G";
-			break;
-		case 7:
-			col_pos = "H";
-			break;
-			
-		default:
-			System.out.println(" Incorrect value for function CPUinsertship switch_case has failed ");
-			break;
-		}
         
         if (targetableposition(target_board, col_pos, row_pos)) {
         	
@@ -110,39 +119,10 @@ public class Player {
 		
 		Scanner input = new Scanner(System.in);
 		
-		String col_pos = null;
+		String col_pos = int_to_string(shot_position[0][1]);
 		int row_pos = shot_position[0][0];
 		
-        switch (shot_position[0][1]) {
-		case 0:
-			col_pos = "A";
-			break;
-		case 1:
-			col_pos = "B";
-			break;
-		case 2:
-			col_pos = "C";
-			break;
-		case 3:
-			col_pos = "D";
-			break;
-		case 4:
-			col_pos = "E";
-			break;
-		case 5:
-			col_pos = "F";
-			break;
-		case 6:
-			col_pos = "G";
-			break;
-		case 7:
-			col_pos = "H";
-			break;
-			
-		default:
-			System.out.println(" Incorrect value for function CPUinsertship switch_case has failed ");
-			break;
-		}
+
 		
 		int result = -1;
 		
@@ -187,50 +167,20 @@ public class Player {
 		//returns true if the selected position is valid (inside the board)
 		//returns false if the selected position invalid (outside the board)
 		
-		int col_to_numeric = -1;
+		int col_to_numeric = string_to_int(position_col);
 		
 		boolean selectable = false;
 		boolean correct_col = true;
 		boolean correct_row = false;
 		
-		switch (position_col) {
-		case "A":
-			col_to_numeric = 0;
-			break;
-		case "B":
-			col_to_numeric = 1;
-			break;
-		case "C":
-			col_to_numeric = 2;
-			break;
-		case "D":
-			col_to_numeric = 3;
-			break;
-		case "E":
-			col_to_numeric = 4;
-			break;
-		case "F":
-			col_to_numeric = 5;
-			break;
-		case "G":
-			col_to_numeric = 6;
-			break;
-		case "H":
-			col_to_numeric = 7;
-			break;
-			
-		default:
-			System.out.println(" Incorrect value for function targetableposition switch_case has failed ");
+		correct_row = position_row > -1 && position_row < 8;
+		
+		
+		if (col_to_numeric == -1) {
 			correct_col = false;
-			break;
 		}
-		
-		
-			correct_row = position_row > -1 && position_row < 8;
-		
-		
-		
-			selectable = correct_col && correct_row;
+	
+		selectable = correct_col && correct_row;
 		
 		
 		
@@ -246,42 +196,15 @@ public class Player {
 		//returns true if the selected position is available to put a ship on it.
 		//returns false if the selected position has already a ship on it.
 		
-		int col_to_numeric = -1;
+		int col_to_numeric = string_to_int(position_col);
 		
 		boolean selectable = false;
 		boolean correct_col = true;
 		boolean correct_row = false;
 		
-		switch (position_col) {
-		case "A":
-			col_to_numeric = 0;
-			break;
-		case "B":
-			col_to_numeric = 1;
-			break;
-		case "C":
-			col_to_numeric = 2;
-			break;
-		case "D":
-			col_to_numeric = 3;
-			break;
-		case "E":
-			col_to_numeric = 4;
-			break;
-		case "F":
-			col_to_numeric = 5;
-			break;
-		case "G":
-			col_to_numeric = 6;
-			break;
-		case "H":
-			col_to_numeric = 7;
-			break;
-			
-		default:
-			System.out.println(" Incorrect value for function marcableposition switch_case has failed ");
+
+		if (col_to_numeric == -1) {
 			correct_col = false;
-			break;
 		}
 		
 		if (position_row > -1 && position_row < 8) {
@@ -331,6 +254,7 @@ public class Player {
 			
 		default:
 			System.out.println(" Incorrect value for function string_to_int switch_case has failed ");
+			col_to_numeric = -1;
 			break;
 		}
 		
@@ -399,43 +323,13 @@ public class Player {
 		
 		do {
 		
-	        switch (shipsposition[number_of_ships - 1][1]) {
-			case 0:
-				col_pos = "A";
-				break;
-			case 1:
-				col_pos = "B";
-				break;
-			case 2:
-				col_pos = "C";
-				break;
-			case 3:
-				col_pos = "D";
-				break;
-			case 4:
-				col_pos = "E";
-				break;
-			case 5:
-				col_pos = "F";
-				break;
-			case 6:
-				col_pos = "G";
-				break;
-			case 7:
-				col_pos = "H";
-				break;
-				
-			default:
-				System.out.println(" Incorrect value for function CPUinsertship switch_case has failed ");
-				break;
-			}
-        
+			col_pos = int_to_string(shipsposition[number_of_ships - 1][1]);        
 
-        System.out.println("CPU entered = " + col_pos);
-        
-        // Getting int input
-        row_pos = shipsposition[number_of_ships - 1][0];
-        System.out.println("CPU entered " + row_pos);
+	        System.out.println("CPU entered = " + col_pos);
+	        
+	        // Getting int input
+	        row_pos = shipsposition[number_of_ships - 1][0];
+	        System.out.println("CPU entered " + row_pos);
         
         
 
