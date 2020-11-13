@@ -9,19 +9,326 @@ public class PlayerTest {
 	@Test
 	public void testMarcableposition() {
 		
-		Board b = new Board();
 		
 		Player p = new Player();
 		
-		int row = 1;
+
 		
-		String col = "C";
+		//Limit testing of the board
 		
-		boolean result = p.marcableposition(b, col, row);
-		
+		//Column A
+		int row = 0;
+		String col = "A";
+		boolean result = p.marcableposition(p.getM_playerboard(), col, row);
 		assertTrue(result);
 		
+		row = 1;
+		col = "A";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
 		
+		row = 2;
+		col = "A";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 3;
+		col = "A";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 4;
+		col = "A";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 5;
+		col = "A";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 6;
+		col = "A";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 7;
+		col = "A";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		//Column H
+		row = 0;
+		col = "H";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 1;
+		col = "H";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 2;
+		col = "H";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 3;
+		col = "H";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 4;
+		col = "H";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 5;
+		col = "H";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 6;
+		col = "H";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 7;
+		col = "H";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+				
+		//Row 0
+		row = 0;
+		col = "A";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 0;
+		col = "B";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 0;
+		col = "C";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 0;
+		col = "D";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 0;
+		col = "E";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 0;
+		col = "F";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 0;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 0;
+		col = "H";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+				
+		//Row 7
+		row = 7;
+		col = "A";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 7;
+		col = "B";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 7;
+		col = "C";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 7;
+		col = "D";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 7;
+		col = "E";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 7;
+		col = "F";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 7;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 7;
+		col = "H";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+	//Boundary testing of the board
+		//Interior (true values)
+		
+		//Column B
+		row = 1;
+		col = "B";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 2;
+		col = "B";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 3;
+		col = "B";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 4;
+		col = "B";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 5;
+		col = "B";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 6;
+		col = "B";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+
+		
+		//Column G
+		row = 1;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 2;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 3;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 4;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 5;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 6;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		//Row 1
+		row = 1;
+		col = "B";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 1;
+		col = "C";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 1;
+		col = "D";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 1;
+		col = "E";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 1;
+		col = "F";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 1;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		//Row 6
+		row = 6;
+		col = "B";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 6;
+		col = "C";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 6;
+		col = "D";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 6;
+		col = "E";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 6;
+		col = "F";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		row = 6;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);
+		
+		//Exterior (false values)
+		
+		row = -1;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertFalse(result);
+		
+		row = 8;
+		col = "G";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertFalse(result);
+		
+		row = 5;
+		col = "I";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertFalse(result);
+		
+		row = -20;
+		col = "Z";
+		result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertFalse(result);
 	}
 	
 	//@Test
