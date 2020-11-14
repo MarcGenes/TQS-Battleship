@@ -102,11 +102,18 @@ public class Player {
 			int converted_col = string_to_int(col_pos);
 			result = target_board.getM_board()[row_pos][converted_col];
 			String converted_result = Integer.toString(result);
-			this.getM_playerboard().getM_adversaryboard()[row_pos][converted_col] = converted_result;
 			
-			if (result == 1) {
-				this.getM_playerboard().setM_strikes(this.getM_playerboard().getM_strikes() + 1);
+			if (this.getM_playerboard().getM_adversaryboard()[row_pos][converted_col] == " ") {
+				
+				this.getM_playerboard().getM_adversaryboard()[row_pos][converted_col] = converted_result;
+				
+				if (result == 1) {
+					this.getM_playerboard().setM_strikes(this.getM_playerboard().getM_strikes() + 1);
+				}
 			}
+			
+			
+			
 		}
 	            
 		
