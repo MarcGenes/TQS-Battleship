@@ -649,7 +649,7 @@ public class PlayerTest {
 			
 		}	
 	
-	@Test 
+	@Test
 		public void testchooseshotdirection() {
 		Player you = new Player();
 		Player bot = new Player();
