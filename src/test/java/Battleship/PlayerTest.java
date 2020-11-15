@@ -180,8 +180,8 @@ public class PlayerTest {
 		result = p.marcableposition(p.getM_playerboard(), col, row);
 		assertTrue(result);
 		
-	//Boundary testing of the board
-		//Interior Boundary (true values)
+	//Limit testing of the board
+		//Interior Limit (true values) 
 		
 		//Column B
 		row = 1;
@@ -320,7 +320,7 @@ public class PlayerTest {
 		result = p.marcableposition(p.getM_playerboard(), col, row);
 		assertFalse(result);
 		
-		row = 5;
+		row = 0;
 		col = "I";
 		result = p.marcableposition(p.getM_playerboard(), col, row);
 		assertFalse(result);
@@ -330,7 +330,7 @@ public class PlayerTest {
 		result = p.marcableposition(p.getM_playerboard(), col, row);
 		assertFalse(result);
 		
-	//Interior values (True values)
+	//Interior values or equivalent partition values  (True values)
 		
 		//Row 2
 		row = 2;
@@ -422,7 +422,7 @@ public class PlayerTest {
 	
 	//@Test
 	public void testInsertship() {
-		
+	
 		//Player p = new Player();
 		
 		//p.insertship();
@@ -507,15 +507,12 @@ public class PlayerTest {
 	
 	
 	@Test
-	public void CPUinsertship() {
+	public void testCPUinsertship() {
 		
-		
-		Player p = new Player();
 		/*MockObject allocates on A-0, C-2, H-0, H-7 */
+		Player p = new Player();
 		MockInterfaceRandom MockObject = new MockInterfaceRandom();
-		
 		p.CPUinsertship(MockObject.randomallocation());
-		
 		p.getM_playerboard().printboard();
 		
 		for (int row = 0; row < 8; row++) {
@@ -546,13 +543,12 @@ public class PlayerTest {
 	
 	
 	@Test
-	public void CPUinsertship1() {
+	public void testCPUinsertship1() {
 		
 		
 		Player p = new Player();
-		
 		RealRandom random = new RealRandom();
-		
+
 		int[][]rand = random.randomallocation();
 		
 		int row0 = rand[0][0];
@@ -568,7 +564,7 @@ public class PlayerTest {
 		int col3 = rand[3][1];
 
 		p.CPUinsertship(rand);
-		
+		//Nested loop testing N iterations (All possible)
 		for (int row = 0; row < 8; row++) {
 
 			for (int col = 0; col < 8; col++) {
@@ -596,13 +592,13 @@ public class PlayerTest {
 		//Test has to be under here
 	}
 	
+	
+	
 	@Test
-	public void shoot() {
+	public void testshoot() {
 		
 		Player you = new Player();
-		
 		Player bot = new Player();
-		
 		MockInterfaceRandom mockobject = new MockInterfaceRandom();
 		/*MockObject allocates on A-0, C-2, H-0, H-7 */
 		bot.CPUinsertship(mockobject.randomallocation());
@@ -614,7 +610,7 @@ public class PlayerTest {
 	}
 	
 	@Test
-		public void CPUshoot() {
+		public void testCPUshoot() {
 			
 			Player you = new Player();
 			
@@ -628,17 +624,17 @@ public class PlayerTest {
 			assertEquals(1,result);
 			
 		}
+	
+	
 		
 	@Test
-		public void CPUshoot_real() {
+		public void testCPUshoot_real() {
 			
 			Player you = new Player();
-			
 			Player bot = new Player();
 			RealRandom rand = new RealRandom();
-			MockInterfaceRandom mockobject = new MockInterfaceRandom();
 			/*MockObject allocates on A-0, C-2, H-0, H-7 */
-			you.CPUinsertship(mockobject.randomallocation());
+			you.CPUinsertship(rand.randomallocation());
 			int[][] position = rand.randomshot();
 			int result = bot.CPUshoot(you.getM_playerboard(), position);
 			bot.getM_playerboard().printadversaryboard();
@@ -653,8 +649,8 @@ public class PlayerTest {
 			
 		}	
 	
-	@Test
-		public void chooseshotdirection() {
+	@Test 
+		public void testchooseshotdirection() {
 		Player you = new Player();
 		Player bot = new Player();
 		MockInterfaceRandom mockobject = new MockInterfaceRandom();

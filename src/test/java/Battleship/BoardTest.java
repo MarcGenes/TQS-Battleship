@@ -17,9 +17,49 @@ public class BoardTest {
 			for (int col = 0; col < 8; col++) {
 				
 				assertEquals(0, b.getM_board()[row][col]);
-				//System.out.println(b.getM_board()[row][col]);
 				
 			}
+			
+		}
+	}
+	@Test
+	public void testGenerateboard1() {
+		
+		Board b = new Board();
+		
+		//Boundary/Frontier testing of the board
+		
+		for (int i = 0; i < 8; i++) {
+			
+			assertEquals(0, b.getM_board()[0][i]);
+			assertEquals(0, b.getM_board()[7][i]);
+			
+			assertEquals(0, b.getM_board()[i][0]);
+			assertEquals(0, b.getM_board()[i][7]);
+			
+		}
+		
+		//Interior limit testing of the board
+		
+		for (int i = 1; i < 7; i++) {
+					
+					assertEquals(0, b.getM_board()[1][i]);
+					assertEquals(0, b.getM_board()[6][i]);
+					
+					assertEquals(0, b.getM_board()[i][1]);
+					assertEquals(0, b.getM_board()[i][6]);
+					
+				}
+		
+		//Interior values  of the board
+		
+		for (int i = 2; i < 6; i++) {
+			
+			assertEquals(0, b.getM_board()[2][i]);
+			assertEquals(0, b.getM_board()[5][i]);
+			
+			assertEquals(0, b.getM_board()[i][2]);
+			assertEquals(0, b.getM_board()[i][5]);
 			
 		}
 		
