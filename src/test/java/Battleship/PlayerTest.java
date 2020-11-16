@@ -6,6 +6,41 @@ import org.junit.Test;
 
 public class PlayerTest {
 
+	//@Test
+	public void testMarcableposition1() {
+		
+		//Player p = new Player();
+		//Row = true Col = true, find water
+		/*int row = 0;
+		String col = "A";
+		boolean result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertTrue(result);*/
+		
+
+		//Row = false Col = false, dont find water
+		/*int row = 10;
+		String col = "M";
+		Boolean result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertFalse(result);*/
+		
+		/*int row = 10;
+		String col = "A";
+		boolean result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertFalse(result);*/
+		
+		/*int row = 7;
+		String col = "J";
+		boolean result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertFalse(result);*/
+		
+		/*p.getM_playerboard().getM_board()[7][7] = 1;
+		int row = 7;
+		String col = "H";
+		boolean result = p.marcableposition(p.getM_playerboard(), col, row);
+		assertFalse(result);
+		*/
+	}
+	
 	@Test
 	public void testMarcableposition() {
 		
@@ -602,10 +637,11 @@ public class PlayerTest {
 		MockInterfaceRandom mockobject = new MockInterfaceRandom();
 		/*MockObject allocates on A-0, C-2, H-0, H-7 */
 		bot.CPUinsertship(mockobject.randomallocation());
-		int [][] direction = mockobject.randomshot();
-		int result = you.shoot(bot.getM_playerboard(), direction);
+		//int [][] direction = mockobject.randomshot();
+		int[][] randomization = {{50,7}};
+		int result = you.shoot(bot.getM_playerboard(), randomization);
 		you.getM_playerboard().printadversaryboard();
-		assertEquals(1,result);
+		assertEquals(-1,result);
 		
 	}
 	
@@ -657,6 +693,184 @@ public class PlayerTest {
 		int [][] direction = mockobject.randomshot();
 		assertNotNull(direction);
 		
+		
+	}
+	
+	@Test
+	public void looptest0times() {
+	Player you = new Player();
+	int ships_to_locate = 0;
+	int loops = 0;
+	int row = -1;
+	int col = -1;
+	while (ships_to_locate > 0) {
+		switch (ships_to_locate) {
+		case 1:
+			row = 7; col = 7;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 2:
+			row = 0; col = 7;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 3:
+			row = 5; col = 5;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 4:
+			row = 0; col = 0;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		default:
+			break;
+		}
+		ships_to_locate--;
+		loops++;
+	}
+		you.getM_playerboard().printboard();
+		assertEquals(0, loops);
+	}
+	
+	@Test
+	public void looptest1times() {
+	Player you = new Player();
+	int ships_to_locate = 1;
+	int loops = 0;
+	int row = -1;
+	int col = -1;
+	while (ships_to_locate > 0) {
+		switch (ships_to_locate) {
+		case 1:
+			row = 7; col = 7;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 2:
+			row = 0; col = 7;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 3:
+			row = 5; col = 5;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 4:
+			row = 0; col = 0;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		default:
+			break;
+		}
+		ships_to_locate--;
+		loops++;
+	}
+		you.getM_playerboard().printboard();
+		assertEquals(1, loops);
+		
+	}
+	
+	@Test
+	public void looptest2times() {
+	Player you = new Player();
+	int ships_to_locate = 2;
+	int loops = 0;
+	int row = -1;
+	int col = -1;
+	while (ships_to_locate > 0) {
+		switch (ships_to_locate) {
+		case 1:
+			row = 7; col = 7;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 2:
+			row = 0; col = 7;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 3:
+			row = 5; col = 5;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 4:
+			row = 0; col = 0;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		default:
+			break;
+		}
+		ships_to_locate--;
+		loops++;
+	}
+		you.getM_playerboard().printboard();
+		assertEquals(2, loops);
+	}
+	
+	@Test
+	public void looptest3times() {
+	Player you = new Player();
+	int ships_to_locate = 3;
+	int loops = 0;
+	int row = -1;
+	int col = -1;
+	while (ships_to_locate > 0) {
+		switch (ships_to_locate) {
+		case 1:
+			row = 7; col = 7;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 2:
+			row = 0; col = 7;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 3:
+			row = 5; col = 5;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 4:
+			row = 0; col = 0;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		default:
+			break;
+		}
+		ships_to_locate--;
+		loops++;
+	}
+		you.getM_playerboard().printboard();
+		assertEquals(3, loops);
+		
+	}
+	
+	@Test
+	public void looptest4times() {
+	Player you = new Player();
+	int ships_to_locate = 4;
+	int loops = 0;
+	int row = -1;
+	int col = -1;
+	while (ships_to_locate > 0) {
+		switch (ships_to_locate) {
+		case 1:
+			row = 7; col = 7;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 2:
+			row = 0; col = 7;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 3:
+			row = 5; col = 5;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		case 4:
+			row = 0; col = 0;
+			you.getM_playerboard().getM_board()[row][col] = 1;
+			break;
+		default:
+			break;
+		}
+		ships_to_locate--;
+		loops++;
+	}
+		you.getM_playerboard().printboard();
+		assertEquals(4, loops);
 		
 	}
 

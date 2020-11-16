@@ -21,6 +21,8 @@ public class BoardTest {
 			}
 			
 		}
+		b.printboard();
+		b.printadversaryboard();
 	}
 	@Test
 	public void testGenerateboard1() {
@@ -30,7 +32,7 @@ public class BoardTest {
 		//Boundary/Frontier testing of the board
 		
 		for (int i = 0; i < 8; i++) {
-			
+
 			assertEquals(0, b.getM_board()[0][i]);
 			assertEquals(0, b.getM_board()[7][i]);
 			

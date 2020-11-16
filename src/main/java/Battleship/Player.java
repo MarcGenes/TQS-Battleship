@@ -29,7 +29,7 @@ public class Player {
         System.out.println("Text entered = " + col_pos);
         
         // Getting int input
-        System.out.print("Enter a row number between 0 - 7: ");
+        System.out.print("Enter a row number between 0 - 7: "); 
         row_pos = input.nextInt();
         System.out.println("You entered " + row_pos);
 	        
@@ -181,14 +181,19 @@ public class Player {
 		boolean correct_col = true;
 		boolean correct_row = false;
 		
-		correct_row = position_row > -1 && position_row < 8;
+		if (position_row > -1 && position_row < 8) {
+			correct_row = true;
+		}
 		
 		
 		if (col_to_numeric == -1) {
 			correct_col = false;
 		}
 	
-		selectable = correct_col && correct_row;
+		if (correct_col && correct_row) {
+			selectable = true;
+		}
+
 		
 		
 		
