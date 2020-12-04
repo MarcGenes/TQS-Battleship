@@ -6,3 +6,4 @@ public interface InterfaceRandom {
 	public int[][] randomshot();
 
 }
+//Comentario Prueba
