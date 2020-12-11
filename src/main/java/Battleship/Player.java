@@ -5,7 +5,13 @@ public class Player {
 	
 	private Board m_playerboard;
 	
+	EntradaDatosTest datosTest = new LecturaDatosTest();
 	
+	public void tipoDatoslecturatest (EntradaDatosTest d) 
+	{
+		datosTest = d;
+		
+	}
 	
 	public Board getM_playerboard() {
 		return m_playerboard;
@@ -25,12 +31,14 @@ public class Player {
 			
 		// Getting String input
         System.out.print("Enter a word between A - H in capital letters: ");
-        col_pos = input.next();
+        col_pos = datosTest.entrarLetra();
+        //col_pos = input.next();
         System.out.println("Text entered = " + col_pos);
         
         // Getting int input
         System.out.print("Enter a row number between 0 - 7: "); 
-        row_pos = input.nextInt();
+        row_pos = datosTest.entrarNumero();
+        //row_pos = input.nextInt();
         System.out.println("You entered " + row_pos);
 	        
          
@@ -295,12 +303,14 @@ public class Player {
 			
 		// Getting String input
         System.out.print("Enter a word between A - H in capital letters: ");
-        col_pos = input.next();
+        col_pos = datosTest.entrarLetra();
+        //col_pos = input.next();
         System.out.println("Text entered = " + col_pos);
         
         // Getting int input
         System.out.print("Enter a row number between 0 - 7: ");
-        row_pos = input.nextInt();
+        row_pos = datosTest.entrarNumero();
+        //row_pos = input.nextInt();
         System.out.println("You entered " + row_pos);
         
 	        if (marcableposition(m_playerboard, col_pos, row_pos)) {
