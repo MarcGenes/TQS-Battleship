@@ -12,7 +12,7 @@ public class Board {
 	
 	
 	
-	
+	 
 	
 	
 	public int getM_strikes() {

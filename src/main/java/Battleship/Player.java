@@ -33,7 +33,7 @@ public class Player {
         row_pos = input.nextInt();
         System.out.println("You entered " + row_pos);
 	        
-        
+         
         
 		} while (!targetableposition(target_board, col_pos, row_pos));
 		
