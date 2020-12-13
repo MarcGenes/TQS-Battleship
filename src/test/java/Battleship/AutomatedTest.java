@@ -226,8 +226,8 @@ public void testwin1() { // gano disparando los barcos de cpu puestos en los ext
 
 	}
 	
-	
-public void testwin3() { // Test de ganar colocando los barcos de cpu en fila vertical uno detras de otro
+	@Test
+	public void testwin3() { // Test de ganar colocando los barcos de cpu en fila vertical uno detras de otro
 						
 		
 		Player you = new Player();
@@ -332,8 +332,9 @@ public void testwin3() { // Test de ganar colocando los barcos de cpu en fila ve
 		assertEquals("You win like a champ", match_result);
 
 	}
-public void testlose4() { //test de perder poniendo mis barcos en diagonal todos en fila
-						  //cpu dispararà hasta acertar mis 4 barcos
+	@Test
+	public void testlose4() { //test de perder poniendo mis barcos en diagonal todos en fila
+						  //cpu dispararà 
 	
 	Player you = new Player();
 	Player cpu = new Player();
