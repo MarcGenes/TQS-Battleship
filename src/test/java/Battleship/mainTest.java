@@ -22,12 +22,12 @@ public class mainTest {
 		
 		you.getM_playerboard().printboard();
 		
-		cpu.CPUinsertship(mockobject.randomallocation());
+		cpu.CPUinsertship(mockobject.randomallocation1()); // aqui se meten los barcos ya creados para saber dobde van
 		
 		boolean finish = false;
 		
 		int number_of_plays = 0;
-		int[][] direction = mockobject.randomallocation();
+		int[][] direction = mockobject.randomallocation1();
 	
 		int row, col;
 		do {
@@ -125,7 +125,7 @@ public class mainTest {
 		MockInterfaceRandom mockobject = new MockInterfaceRandom();
 		RealRandom rand = new RealRandom();
 		
-		you.CPUinsertship(mockobject.randomallocation());
+		you.CPUinsertship(mockobject.randomallocation1());
 		
 		System.out.println("This is your board");
 		
@@ -136,7 +136,7 @@ public class mainTest {
 		boolean finish = false;
 		
 		int number_of_plays = 0;
-		int[][] direction = mockobject.randomallocation();
+		int[][] direction = mockobject.randomallocation1();
 	
 		int row, col;
 		do {

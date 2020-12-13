@@ -58,4 +58,31 @@ public class RealRandom implements InterfaceRandom {
 		return result;
 	}
 
+	@Override
+	public int[][] randomallocation1() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int[][] randomallocation2() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int[][] randomallocation3() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int[][] randomallocation4() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+
 }
